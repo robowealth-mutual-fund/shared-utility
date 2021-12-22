@@ -18,7 +18,7 @@ The modules is contains the golang utilities for internal services.
  go get github.com/robowealth-mutual-fund/shared-utility
  ```
  2. Import it in your code
- ```go
+ ```
  import "github.com/robowealth-mutual-fund/shared-utility/httpclient"
  import "github.com/robowealth-mutual-fund/shared-utility/errors"
  import "github.com/robowealth-mutual-fund/shared-utility/grpcerrors"
@@ -33,14 +33,6 @@ Go version >= 1.13 (RECOMMENDED)
 ```bash
 go version # To know your go version
 
-go env -w GO111MODULE=on
-go env -w GOPROXY="https://goproxy.io,direct"
-
-# Set go environment to find private module for specified url
-go env -w GOPRIVATE="https://git.robodev.co/*"
-
-# Disable checksum the private modules for specified url
-go env -w GONOSUMDB="git.robodev.co/*"
 ```
 
 ### Git
@@ -50,18 +42,6 @@ Under the `go get` command is using Git to pull the specified versions of your d
 How to get personal access token on GitLab [Here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
 >>>
 
-```bash
-git config \
---global \
-url."https://oauth2:${personal_access_token}@git.robodev.co".insteadOf \
-"https://git.robodev.co"
-
-#or
-git config \
---global \
-url."https://${user}:${personal_access_token}@git.robodev.co".insteadOf \
-"https://git.robodev.co"
-```
 
 >>>
 This is great for local development, but what about my CI/CD pipeline?
@@ -75,13 +55,7 @@ Here is an example of a Dockerfile that allows for the injection of credentials 
 # ------------------------------------------
 FROM golang:1.14.1-alpine as dependencies
 
-ENV GO11MODULE=on
-
 # Setup ENV (FOR PRIVATE MODULE)
-ENV GOPROXY="https://goproxy.io,direct"
-ENV GOPRIVATE="https://git.robodev.co/imp/*"
-ENV GONOSUMDB="https://git.robodev.co/*"
-ENV GITLAB_ACCESS_TOKEN="apgUaNUFr-EeYFqoruvf"
 
 # Install git.
 # Git is required for fetching the dependencies.
