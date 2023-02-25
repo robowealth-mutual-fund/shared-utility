@@ -19,9 +19,9 @@ require (
 	github.com/onsi/ginkgo v1.16.5 // indirect
 	github.com/onsi/gomega v1.17.0 // indirect
 	github.com/stretchr/testify v1.5.1 // indirect
-	golang.org/x/net v0.0.0-20210428140749-89ef3d95e781 // indirect
-	golang.org/x/sys v0.0.0-20210423082822-04245dca01da // indirect
-	golang.org/x/text v0.3.6 // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
 	google.golang.org/protobuf v1.26.0 // indirect
 	gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a // indirect
 	gopkg.in/redis.v3 v3.6.4 // indirect
